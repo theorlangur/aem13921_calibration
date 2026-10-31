@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "West Build",
+            "type": "shell",
+            "command": "./build.sh",
+            "group": "build"
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "./h.sh cmake --build build",
+            "group": "build"
+        },
+        {
+            "label": "Flash over JLINK-EDU",
+            "type": "shell",
+            "command": "./h.sh west flash -d build"
+        },
+        {
+            "label": "Flash over JLINK-EDU (Erase)",
+            "type": "shell",
+            "command": "./h.sh west flash -d build --erase"
+        },
+        {
+            "label": "NRFUtil Reset",
+            "type": "shell",
+            "command": "nrfutil device reset"
+        },
+        {
+            "label": "Run VSCode GCC",
+            "type": "shell",
+            "command": "./h.sh code ."
+        }
+    ]
+}

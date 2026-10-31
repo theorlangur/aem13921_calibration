@@ -1,0 +1,26 @@
+/ {
+	buttons: buttons {
+		compatible = "gpio-keys";
+		trigger: button_0 {
+			gpios = <&gpio0 1 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "Trigger";
+			zephyr,code = <INPUT_KEY_0>;
+		};
+	};
+
+	zephyr,user{
+		buck-enable-gpios = <&gpio1 11 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+		apm-src1-gpios    = <&gpio1 7 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+		apm-src2-gpios    = <&gpio1 6 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+		apm-buck-gpios    = <&gpio1 5 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+		apm-5v-gpios      = <&gpio1 4 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+	};
+};
+
+&gpio0 {
+	status = "okay";
+};
+
+&gpio1 {
+	status = "okay";
+};

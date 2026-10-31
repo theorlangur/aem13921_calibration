@@ -1,0 +1,10 @@
+Vsto: 3.542
+
+Load: 2127173.66
+Avg: 3.46mA
+Max: 19.09mA
+time: 1:01.4m
+Charge: 212.71mC
+
+alpha=5.7613*10^-9
+

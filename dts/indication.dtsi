@@ -1,0 +1,14 @@
+/ {
+	leds {
+		compatible = "gpio-leds";
+
+		measurement_active: measurement {
+			gpios = <&gpio2 2 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+			label = "MeasurementActive";
+		};
+	};
+};
+
+&gpio2 {
+	status = "okay";
+};

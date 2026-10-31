@@ -1,0 +1,17 @@
+Src1: 2212804.00
+Avg: 3.95mA
+Max: 4.84mA
+time: 1:01.4m
+Charge: 242.67mC
+
+Vsto: 3.561
+
+
+Src1: 1435816.19 (total: 370440576), windows: 258
+Avg: 2.58mA
+Max: 4.42
+Time: 1:01.4m
+Charge: 158.41mC
+
+alpha = (0.00395 * 3.561) / 2212804 = 6.3566 * 10^-9;
+

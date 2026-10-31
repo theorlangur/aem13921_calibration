@@ -1,0 +1,81 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    //"program": "${workspaceRoot}/build/zbco2/zephyr/zephyr.elf",
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex-Debug Attach GCC",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceFolder}/build_ezurio_gcc16_human/watering/zephyr/zephyr.elf",
+            "request": "attach",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "interface": "swd",
+            "device": "cortex-m33",
+            "rtos": "Zephyr",
+            "preRestartCommands": [
+                "enable breakpoint"
+            ]
+        },
+        {
+            "name": "Cortex-Debug Start GCC",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceFolder}/build_ezurio_gcc16_human/watering/zephyr/zephyr.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "interface": "swd",
+            "device": "cortex-m33",
+            "rtos": "Zephyr",
+            "runToEntryPoint": "",
+            // "preRestartCommands": [
+            //   "enable breakpoint"
+            // ],
+            "postResetCommands": [
+                "stepi"
+            ],
+            "showDevDebugOutput": "none"
+        },
+        {
+            "name": "CoreDump",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build_ezurio_llvm/watering/zephyr/zephyr.elf",
+            "cwd": "${workspaceFolder}",
+            "miDebuggerPath": "/home/theorlangur/ncs/toolchains/7cbc0036f4/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "miDebuggerServerAddress": "localhost:1234",
+            "useExtendedRemote": true,
+            "stopAtConnect": false,
+            "stopAtEntry": false,
+            "MIMode": "gdb"
+        },
+        {
+            "name": "Launch MCUBoot",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build_ezurio_llvm/mcuboot/zephyr/zephyr.elf",
+            "cwd": "${workspaceFolder}",
+            "miDebuggerPath": "/home/theorlangur/ncs/toolchains/7cbc0036f4/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "miDebuggerServerAddress": "localhost:44477",
+            "useExtendedRemote": true,
+            "stopAtConnect": true,
+            "stopAtEntry": true,
+            "MIMode": "gdb"
+        },
+        {
+            "name": "Launch OCD",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build52/presence_multi_v2/zephyr/zephyr.elf",
+            "cwd": "${workspaceFolder}",
+            "miDebuggerPath": "/home/theorlangur/ncs/toolchains/7cbc0036f4/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "miDebuggerServerAddress": "localhost:3333",
+            "useExtendedRemote": true,
+            "stopAtConnect": true,
+            "stopAtEntry": true,
+            "MIMode": "gdb"
+        }
+    ]
+}

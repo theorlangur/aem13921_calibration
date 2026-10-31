@@ -1,0 +1,21 @@
+/ {
+	zephyr,user{
+		aem-irq-load-gpios = <&gpio1 12 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+		apm-irq-sto-gpios  = <&gpio1 13 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+		apm-irq-gpios      = <&gpio1 14 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+	};
+};
+
+
+&i2c21 {
+	aem13921: aem13921@51{
+		compatible="epeas,aem13921";
+		reg = <0x51>;
+		status = "okay";
+		//zephyr,deferred-init;
+	};
+};
+
+&gpio1 {
+	status = "okay";
+};
