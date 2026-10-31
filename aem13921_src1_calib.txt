@@ -15,3 +15,5 @@ Charge: 158.41mC
 
 alpha = (0.00395 * 3.561) / 2212804 = 6.3566 * 10^-9;
 
+R=150 Ohm
+Rpre-load-sto=68Ohm
